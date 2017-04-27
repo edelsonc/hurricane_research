@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 
 \title{Hurricane Characterization with Common Inferential Statistics and Machine Learning Techniques}
 \author{Charlie Edelson}
@@ -21,10 +22,37 @@
 	\section{Introduction}
 	UPDATE BACKGROUND HERE!!!! In this section I will talk about hurricanes and how they're very interesting model systems. Additionally, I'll go on to talk about a little bit of the recent history into modeling them and why people use them.
 	
-	The purpose of this paper is to investigate the properties of named storms in the Atlantic ocean basin using inferential statistics and machine learning techniques. Quadratic and Cubic polynomial regressions will be used to parameterize and model storm windspeed as a function of time, with coefficients binned across storms. ARIMA models will then be fit to each storm, and the most common models will be further investigated. Additionally, the average number of storms per year, $\lambda$, will be investigated using Bayesian statistics to get a distribution on the $\lambda$. Finally, points in windspeed vs pressure phase space will be clustered using two classical machine learning technique, k means clustering and hierarchical clustering. These results will serve as a starting point for further investigation into storm characterization with statistical methods.
+	The purpose of this paper is to investigate the properties of named storms in the Atlantic ocean basin using inferential 
+statistics and machine learning techniques. Quadratic and Cubic polynomial regressions will be used to parameterize and model storm 
+windspeed as a function of time, with coefficients binned across storms. ARIMA models will then be fit to each storm, and the most common 
+models will be further investigated. Additionally, the average number of storms per year, $\lambda$, will be investigated using Bayesian 
+statistics to get a distribution on probable values of $\lambda$. Finally, points in windspeed vs pressure phase space will be clustered 
+using two classical machine learning technique, k means clustering and hierarchical clustering. These results will serve as a starting point for further investigation into storm characterization with statistical methods.
+
+	Unisys 2000-2010 Hurricane/Tropical storm data was used throughout this paper\cite{Unisys}. This data consists of timestamped 
+measurements of storm pressure, temperature, windspeed, latitude, and longitude for all major tropical depressions, tropical storms, and 
+hurricanes between 2000 and 2010. Measurements were taken at approximately six hour intervals. Futhermore, storm name is included for all 
+tropical storms and hurricanes.
+
+	This data was selected for two reasons. The first is the data is consistent, with few missing time intervals. The second is the 
+data tracks the storms directly, as opposed to bouy data. A researcher using this data will not have to judge where the storm is and which 
+bouys are representative of the parameter. This makes the current study repeatable with the original data sample.
 
 	\section{Methods}
-	Unisys 2000-2010 Hurricane/Tropical storm data\cite{Unisys} was used throughout this paper. This data consists of timestamped measurements of storm pressure, temperature, windspeed, latitude, and longitude for all major tropical depressions, tropical storms, and hurricanes between 2000 and 2010. Measurements were taken at approximately six hour intervals. Futhermore, storm name is included for all tropical storms and hurricanes.
+	Unammed storms were removed from the data, as they are not the focus of this study. The results data set contained 157 named 
+storms over the 10 year period.
+
+	\subsection{Polynomial Regression}
+	To understand the general shape of the windspeed profile, quadratic and cubic regression of the following form
+	
+		\begin{align}
+			w_i = \beta_0 + \beta_1 t_i + \beta_2 t_i^2\\
+			w_i = \beta_0 + \beta_1 t_i + \beta_2 t_i^2 + \beta_3 t_i^3,
+		\end{align}
+	where $w_i$ is the windspeed at time $t_i$, was fit to each storm. The resulting coefficients, $\hat{\beta_i}$, were then binned 
+according to values.
+
+	\subsection{ARIMA Modeling}
 
 
 	\bibliography{sources}
