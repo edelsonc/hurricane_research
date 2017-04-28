@@ -62,7 +62,17 @@ according to values to create empirical distribution.
 		\begin{equation}
 			P(D | \lambda) = \frac{\lambda^k e^{-n \lambda}}{k!},
 		\end{equation}
-		where $k$ is the number of storms observed in $n$ years. It is well known that the gamma distribution, $Gamma(\alpha, \beta)$, is a conjugate prior for the poisson distribution, where $\alpha$ and $\beta$ are the shape and inverse scale parameter, respectively. 
+		where $k$ is the number of storms observed in $n$ years. It is well known that the gamma distribution, $Gamma(\alpha, \beta)$, is a conjugate prior for the poisson distribution, where $\alpha$ and $\beta$ are the shape and inverse scale parameter, respectively. Therefore, given a gamma prior, with appropriate initial shape and inverse scale parameters, we can compute the posterior distribution as
+		
+		\begin{equation}
+			P(\lambda | D) = Gamma(\alpha + k, \beta + n).
+		\end{equation}
+		
+
+	\subsection{Cluster Analysis of Pressure and Wind Speed}
+	Observed points were plotted in pressure vs wind speed phase space and then clustered using two common machine learning technique: k means clustering and hierarchical clustering. To compare results to the Saffir-Simpson scale\cite{}, 6 clusters were selected in both cases.
+
+	\section{Analysis}
 
 	\bibliography{sources}
 	\bibliographystyle{ieeetr}
