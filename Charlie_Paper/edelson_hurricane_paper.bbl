@@ -1,7 +1,45 @@
 \begin{thebibliography}{1}
 
 \bibitem{Unisys}
-Unisys, ``Hurricane/tropical data,.'' http://weather.unisys.com/hurricane/.
+Unisys, ``Hurricane/tropical data.'' http://weather. unisys.com/hurricane/.
 \newblock Accessed: 04-20-2017.
+
+\bibitem{mckinney2010data}
+W.~McKinney {\em et~al.}, ``Data structures for statistical computing in
+  python,'' in {\em Proceedings of the 9th Python in Science Conference},
+  vol.~445, pp.~51--56, van der Voort S, Millman J, 2010.
+
+\bibitem{scipy}
+E.~Jones, T.~Oliphant, P.~Peterson, {\em et~al.}, ``{SciPy}: Open source
+  scientific tools for {Python},'' 2001--.
+\newblock [Online; accessed <today>].
+
+\bibitem{walt2011numpy}
+S.~v.~d. Walt, S.~C. Colbert, and G.~Varoquaux, ``The numpy array: a structure
+  for efficient numerical computation,'' {\em Computing in Science \&
+  Engineering}, vol.~13, no.~2, pp.~22--30, 2011.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay, ``Scikit-learn:
+  Machine learning in {P}ython,'' {\em Journal of Machine Learning Research},
+  vol.~12, pp.~2825--2830, 2011.
+
+\bibitem{statsmodels2010}
+J.~Seabold and J.~Perktold, ``Statsmodels: Econometric and statistical modeling
+  with python,'' in {\em Proceedings of the 9th Python in Science Conference},
+  2010.
+
+\bibitem{hunter2007matplotlib}
+J.~D. Hunter, ``Matplotlib: A 2d graphics environment,'' {\em Computing In
+  Science \& Engineering}, vol.~9, no.~3, pp.~90--95, 2007.
+
+\bibitem{michael_waskom_2014_12710}
+M.~Waskom, O.~Botvinnik, P.~Hobson, J.~B. Cole, Y.~Halchenko, S.~Hoyer,
+  A.~Miles, T.~Augspurger, T.~Yarkoni, T.~Megies, L.~P. Coelho, D.~Wehner,
+  cynddl, E.~Ziegler, diego0020, Y.~V. Zaytsev, T.~Hoppe, S.~Seabold, P.~Cloud,
+  M.~Koskinen, K.~Meyer, A.~Qalieh, and D.~Allan, ``seaborn: v0.5.0 (november
+  2014),'' Nov. 2014.
 
 \end{thebibliography}
