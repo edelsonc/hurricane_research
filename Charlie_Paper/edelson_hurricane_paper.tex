@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 
@@ -14,15 +15,16 @@
 	
 	\maketitle
 
+	% UPDATE ABSTRACT
 	\begin{abstract}
-	PUT ABSTRACT HERE!!!!!! This is where the abstract will eventually go. However, currently we only have a place holder.
+	This is where the abstract will eventually go. However, currently we only have a place holder.
 	\end{abstract}
 	
-	\keywords{PUT KEY WORDS HERE!!!!, these, are, important, words}
+	% UPDATE THE KEYWORKS!!!
+	\keywords{word1, word2, word3}
 
 	\section{Introduction}
-	UPDATE BACKGROUND HERE!!!! In this section I will talk about hurricanes and how they're very interesting model systems. Additionally, I'll go on to talk about a little bit of the recent history into modeling them and why people use them.
-	
+	% UPDATE BACKGROUND HERE!!!!	
 	The purpose of this paper is to investigate the properties of named storms in the Atlantic ocean basin using inferential 
 statistics and machine learning techniques. Quadratic and Cubic polynomial regressions will be used to parameterize and model storm 
 windspeed as a function of time, with coefficients binned across storms. ARIMA models will then be fit to each storm, and the most common 
@@ -39,10 +41,8 @@ tropical storms and hurricanes.
 data tracks the storms directly, as opposed to buoy data. A researcher using this data will not have to judge where the storm is and which 
 buoys are representative of the parameter. This makes the current study repeatable with the original data sample.
 
-	\section{Methods}
-	 All computational analysis was performed using the python programming language with the Pandas, Scipy, NumPy, Scikit-Learn, and Stats-Models libraries\cite{mckinney2010data, scipy, walt2011numpy, scikit-learn, statsmodels2010}. Graphics and visualizations were created using the Matplotlib and Seaborn libraries\cite{hunter2007matplotlib, michael_waskom_2014_12710}.
-	 
-	 Unnamed storms were removed from the data, as they are not the focus of this study. This leaves 157 named storms over the 10 year period. 
+	\section{Methods}	 
+	 Unnamed storms were removed from the data, as they are not the focus of this study, leaving 157 named storms over the 10 year period. 
 
 	\subsection{Polynomial Regression}
 	To understand the general shape of the windspeed profile, quadratic and cubic regression of the following forms
@@ -73,8 +73,26 @@ according to values to create empirical distribution.
 	\subsection{Cluster Analysis of Pressure and Wind Speed}
 	Observed points were plotted in pressure vs wind speed phase space and then clustered using two common machine learning technique: k means clustering and hierarchical clustering. To compare results to the Saffir-Simpson scale\cite{}, 6 clusters were selected in both cases.
 
-	\section{Analysis}
+	\section{Analysis and Results}
+		 All computational analysis was performed using the python programming language with the Pandas, Scipy, NumPy, Scikit-Learn, and Stats-Models libraries\cite{mckinney2010data, scipy, walt2011numpy, scikit-learn, statsmodels2010}. Graphics and visualizations were created using the Matplotlib and Seaborn libraries\cite{hunter2007matplotlib, michael_waskom_2014_12710}.
+		 
+	\subsection{Polynomial Regression}
+	In both the quadratic and cubic regressions the constant coefficient dominates the model (Fig. \ref{quadratic} and \ref{cubic}). This indicates the shape of a storm's wind profile is not representable as a polynomial of low degree. Although a higher degree polynomial could be used, reducing model variance, this would increase model bias. Aside from the risk of overfitting, a higher degree polynomial has no clear interpretation in the given context.
 
+	\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.65\textwidth]{images/quadratic.png}
+		\caption{Histograms of the coefficients for the quadratic models fitted to each storm. Notice that $\hat{\beta_1}$ and $\hat{\beta_2}$ are both centered near zero. $\hat{\beta_0}$ has a much larger range, and is shifted slightly in the positive direction, indicating the constant coefficient dominated most models.}
+		\label{quadratic}
+	\end{figure}
+	
+	\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.65\textwidth]{images/cubic.png}
+		\caption{Histograms of the coefficients for the cubic models fitted to each storm. Notice that the first coefficient for $x_1$, $x_2$, and $x_3$ are all centered around zero, while $x_0$ has a much larger range and many more non-zero values. This indicates -- as in the quadratic model -- the constant coefficient is dominating the model.}
+		\label{cubic}
+	\end{figure}
+	
 	\bibliography{sources}
 	\bibliographystyle{ieeetr}
 
