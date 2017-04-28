@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
@@ -37,9 +38,7 @@ measurements of storm pressure, temperature, windspeed, latitude, and longitude 
 hurricanes between 2000 and 2010. Measurements were taken at approximately six hour intervals. Furthermore, storm name is included for all 
 tropical storms and hurricanes.
 
-	This data was selected for two reasons. The first is the data is consistent, with few missing time intervals. The second is the 
-data tracks the storms directly, as opposed to buoy data. A researcher using this data will not have to judge where the storm is and which 
-buoys are representative of the parameter. This makes the current study repeatable with the original data sample.
+	This data was selected for two reasons. The first is the data is consistent, with few missing time intervals. The second is the data tracks the storms directly. The research does not have to make a judgment call of which local sensors (buoy, ground station, etc.) are best representative of the storm at a given time and location. This increases the repeatability, since the original data does not need to be reinterpreted by each new investigator.
 
 	\section{Methods}	 
 	 Unnamed storms were removed from the data, as they are not the focus of this study, leaving 157 named storms over the 10 year period. 
@@ -55,7 +54,7 @@ buoys are representative of the parameter. This makes the current study repeatab
 according to values to create empirical distribution.
 
 	\subsection{ARIMA Modeling}
-	Each storm was cast into a time series and missing time steps were linearly interpolated. The minimum AIC ARIMA was then computed for $p, q, d \le 2$. The order tuple was recorded and tallied for each unique occurrence.
+	Each storm was cast into a time series and missing time steps were linearly interpolated. The minimum AIC ARIMA was then computed for $p, q, d \le 3$. The order tuple was recorded and tallied for each unique occurrence.
 
 	\subsection{Estimation of $\lambda$}
 	Since named storms are an example of a poisson process, an estimate of the shape parameter $\lambda$, the average number of storms per year, can be computed using Bayesian analysis. The likelihood function for the evidence $D$ given $\lambda$ would then be
@@ -79,19 +78,30 @@ according to values to create empirical distribution.
 	\subsection{Polynomial Regression}
 	In both the quadratic and cubic regressions the constant coefficient dominates the model (Fig. \ref{quadratic} and \ref{cubic}). This indicates the shape of a storm's wind profile is not representable as a polynomial of low degree. Although a higher degree polynomial could be used, reducing model variance, this would increase model bias. Aside from the risk of overfitting, a higher degree polynomial has no clear interpretation in the given context.
 
-	\begin{figure}[h]
+	\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.65\textwidth]{images/quadratic.png}
+			\includegraphics[width=0.55\textwidth]{images/quadratic.png}
 		\caption{Histograms of the coefficients for the quadratic models fitted to each storm. Notice that $\hat{\beta_1}$ and $\hat{\beta_2}$ are both centered near zero. $\hat{\beta_0}$ has a much larger range, and is shifted slightly in the positive direction, indicating the constant coefficient dominated most models.}
 		\label{quadratic}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.65\textwidth]{images/cubic.png}
+			\includegraphics[width=0.55\textwidth]{images/cubic.png}
 		\caption{Histograms of the coefficients for the cubic models fitted to each storm. Notice that the first coefficient for $x_1$, $x_2$, and $x_3$ are all centered around zero, while $x_0$ has a much larger range and many more non-zero values. This indicates -- as in the quadratic model -- the constant coefficient is dominating the model.}
 		\label{cubic}
 	\end{figure}
+
+	\subsection{ARIMA Model}
+	For the 157 storms, an order tuple of $(0,2,1)$ showed up more consistently than any other option (Fig. \ref{arima}).
+	
+	\begin{figure}[t]
+			\centering
+			\includegraphics[width=0.55\textwidth]{images/arima.png}
+		\caption{Count plot for the minimum AIC ARIMA coefficient for the 157 named storms. The $(0,2,1$ model appears far more often than any other model. Additionally, a differencing of $d = 2$ appears in the top seven models.}
+		\label{arima}
+	\end{figure}
+
 	
 	\bibliography{sources}
 	\bibliographystyle{ieeetr}
