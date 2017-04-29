@@ -93,14 +93,19 @@ according to values to create empirical distribution.
 	\end{figure}
 
 	\subsection{ARIMA Model}
-	For the 157 storms, an order tuple of $(0,2,1)$ showed up more consistently than any other option (Fig. \ref{arima}).
+	For the 157 storms, an order tuple of $(0,2,1)$ showed up more consistently than any other option (Fig. \ref{arima}). A differencing of $d=2$ is seen in eight of the ten top models, indicating a quadratic trend in windspeed. Furthermore, $q=1$ and $p=0$ suggests that the storm depending on only the previous time step with zero autocorrelation.
 	
 	\begin{figure}[t]
 			\centering
 			\includegraphics[width=0.55\textwidth]{images/arima.png}
-		\caption{Count plot for the minimum AIC ARIMA coefficient for the 157 named storms. The $(0,2,1$ model appears far more often than any other model. Additionally, a differencing of $d = 2$ appears in the top seven models.}
+		\caption{Count plot for the minimum AIC ARIMA coefficient for the 157 named storms. The $(0,2,1)$ model appears far more often than any other model. Additionally, a differencing of $d = 2$ appears in the top seven models.}
 		\label{arima}
 	\end{figure}
+
+	\subsection{Bayesian Estimation of $\lambda$}
+	The prior distribution is given by $Gamma(\alpha = 2, \beta = 1/12)$, and is plotted in Fig. \ref{prior}. This choice of parameters creates large wide spike with a mode of 12, which is what the author believe to be the most likely value of $\lambda$.
+	
+	
 
 	
 	\bibliography{sources}
