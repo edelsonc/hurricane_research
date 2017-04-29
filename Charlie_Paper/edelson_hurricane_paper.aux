@@ -3,7 +3,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Polynomial Regression}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}ARIMA Modeling}{1}}
 \citation{mckinney2010data}
 \citation{scipy}
 \citation{walt2011numpy}
@@ -11,6 +10,7 @@
 \citation{statsmodels2010}
 \citation{hunter2007matplotlib}
 \citation{michael_waskom_2014_12710}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}ARIMA Modeling}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Estimation of $\lambda $}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Cluster Analysis of Pressure and Wind Speed}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Analysis and Results}{2}}
@@ -19,6 +19,15 @@
 \newlabel{quadratic}{{1}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Histograms of the coefficients for the cubic models fitted to each storm. Notice that the first coefficient for $x_1$, $x_2$, and $x_3$ are all centered around zero, while $x_0$ has a much larger range and many more non-zero values. This indicates -- as in the quadratic model -- the constant coefficient is dominating the model.}}{3}}
 \newlabel{cubic}{{2}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Count plot for the minimum AIC ARIMA coefficient for the 157 named storms. The $(0,2,1)$ model appears far more often than any other model. Additionally, a differencing of $d = 2$ appears in the top seven models.}}{4}}
+\newlabel{arima}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}ARIMA Model}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Bayesian Estimation of $\lambda $}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Gamma prior distribution with shape and inverse scale parameters $\alpha = 2$ and $\beta = 1/12$, respectively. These parameters create a wide hump centered over 12, indicating the estimate of $\lambda = 12$ is not very certain.}}{5}}
+\newlabel{prior}{{4}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Posterior distribution for $\lambda $. Notice that is is a much sharper peak than the prior, and the mode has shifted slightly to the right.}}{6}}
+\newlabel{posterior}{{5}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Cluster Analysis: K-Means and Hierarchical Clustering}{6}}
 \bibdata{sources}
 \bibcite{Unisys}{1}
 \bibcite{mckinney2010data}{2}
@@ -28,8 +37,6 @@
 \bibcite{statsmodels2010}{6}
 \bibcite{hunter2007matplotlib}{7}
 \bibcite{michael_waskom_2014_12710}{8}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Count plot for the minimum AIC ARIMA coefficient for the 157 named storms. The $(0,2,1)$ model appears far more often than any other model. Additionally, a differencing of $d = 2$ appears in the top seven models.}}{4}}
-\newlabel{arima}{{3}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}ARIMA Model}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Bayesian Estimation of $\lambda $}{4}}
 \bibstyle{ieeetr}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Hierarchical (top) and K-Means (bottom) clustering. The clusters appear fairly similar, and have sharp linear edges. The blue lines indicate the different catagories for the Saffir-Simpson scale.}}{7}}
+\newlabel{cluster}{{6}{7}}

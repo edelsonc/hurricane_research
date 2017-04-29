@@ -26,6 +26,8 @@
 
 	\section{Introduction}
 	% UPDATE BACKGROUND HERE!!!!	
+	Hurricanes are an interesting meteorological feature. They occur at geological scales, with relatively slow propagation speeds. Their large size means that geophysical effects that usually are hard to observe are easily trackable. Examples of this include the coriolus force, which causes the spiraling shape of the storms, and large scale heat engines, the driving force behind a hurricane. The above properties make them prime subjects for physical and statistical modeling, especially when their effects on people are considered.
+	
 	The purpose of this paper is to investigate the properties of named storms in the Atlantic ocean basin using inferential 
 statistics and machine learning techniques. Quadratic and Cubic polynomial regressions will be used to parameterize and model storm 
 windspeed as a function of time, with coefficients binned across storms. ARIMA models will then be fit to each storm, and the most common 
@@ -103,10 +105,38 @@ according to values to create empirical distribution.
 	\end{figure}
 
 	\subsection{Bayesian Estimation of $\lambda$}
-	The prior distribution is given by $Gamma(\alpha = 2, \beta = 1/12)$, and is plotted in Fig. \ref{prior}. This choice of parameters creates large wide spike with a mode of 12, which is what the author believe to be the most likely value of $\lambda$.
+	The prior distribution is given by $Gamma(\alpha = 2, \beta = 1/12)$, and is plotted in Fig. \ref{prior}. This choice of parameters creates a large wide hump with a mode of 12, which is what the author believe to be the most likely value of $\lambda$. The width is indicative of the uncertainty in this estimate.
+		
+	\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.55\textwidth]{images/prior.png}
+		\caption{Gamma prior distribution with shape and inverse scale parameters $\alpha = 2$ and $\beta = 1/12$, respectively. These parameters create a wide hump centered over 12, indicating the estimate of $\lambda = 12$ is not very certain.}
+		\label{prior}
+	\end{figure}
 	
+	Since the gamma distribution is the conjugate prior to the poisson distribution, the posterior distribution for $\lambda$ is found by computing $\alpha' = \alpha + k$ and $\beta' = \beta + n$, where $k$ is the number of storms that occur in $n$ years. For this sample, there were 157 named storms in 10 years, making the posterior distribution of $\lambda$ $Gamma(\alpha' = 159, \beta' = 10.0833)$. This distribution is shown in Fig. \ref{posterior}. Notice that is has a much sharper peak, and with a mode of approximately 15. The narrow width of the posterior distribution indicates that the values of $\lambda$ are much more certain after the Bayesian update.
 	
+	\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.50\textwidth]{images/posterior.png}
+		\caption{Posterior distribution for $\lambda$. Notice that is is a much sharper peak than the prior, and the mode has shifted slightly to the right.}
+		\label{posterior}
+	\end{figure}
 
+
+	\subsection{Cluster Analysis: K-Means and Hierarchical Clustering}
+		The results of both the K-means and hierarchical clustering are shown in Fig. \ref{cluster}. Both clustering algorithms used Ward's loss function and in both cases 6 clusters were selected. The systems are remarkably similar, both exhibiting sharp diagonal dividing lines between most clusters. The major difference lies in the clusters at lower wind speeds with higher pressures.  K-means clustering still exhibits the sharp dividing lines, while hierarchical clustering in stead has a wedge shaped second cluster. Additionally, while the k-means clusters exhibit uniform width, the hierarchical clusters are narrower in the low wind speed and high pressure partition of the sample.
+		
+		Additionally, the blue vertical lines indicate the divides in storm category for the Saffir-Simpson scale. The lines are are compressed to the right side of the wind speed vs pressure phase space. This is because of the scales focus on hurricanes. Interesting, it visually appears that turning the line by 45 degree would line them up with the cluster breaks.
+
+	\begin{figure}
+			\centering
+			\includegraphics[width=0.55\textwidth]{images/cluster.png}
+		\caption{Hierarchical (top) and K-Means (bottom) clustering. The clusters appear fairly similar, and have sharp linear edges. The blue lines indicate the different catagories for the Saffir-Simpson scale.}
+		\label{cluster}
+	\end{figure}
+
+	\pagebreak
 	
 	\bibliography{sources}
 	\bibliographystyle{ieeetr}

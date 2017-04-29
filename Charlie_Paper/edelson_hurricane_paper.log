@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 APR 2017 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 APR 2017 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -259,62 +259,76 @@ e
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<images/quadratic.png, id=17, 761.7258pt x 715.473pt>
+<images/quadratic.png, id=16, 761.7258pt x 715.473pt>
 File: images/quadratic.png Graphic file (type png)
 
 <use images/quadratic.png>
-Package pdftex.def Info: images/quadratic.png used on input line 83.
+Package pdftex.def Info: images/quadratic.png used on input line 85.
 (pdftex.def)             Requested size: 258.36668pt x 242.67899pt.
  [2]
 <images/cubic.png, id=24, 761.7258pt x 714.7503pt>
 File: images/cubic.png Graphic file (type png)
  <use images/cubic.png>
-Package pdftex.def Info: images/cubic.png used on input line 90.
+Package pdftex.def Info: images/cubic.png used on input line 92.
 (pdftex.def)             Requested size: 258.36668pt x 242.43385pt.
 
 [3 <./images/quadratic.png> <./images/cubic.png>]
 <images/arima.png, id=32, 616.4631pt x 652.5981pt>
 File: images/arima.png Graphic file (type png)
  <use images/arima.png>
-Package pdftex.def Info: images/arima.png used on input line 100.
+Package pdftex.def Info: images/arima.png used on input line 102.
 (pdftex.def)             Requested size: 258.36668pt x 273.52173pt.
 
+<images/prior.png, id=33, 613.5723pt x 608.5134pt>
+File: images/prior.png Graphic file (type png)
+ <use images/prior.png>
+Package pdftex.def Info: images/prior.png used on input line 112.
+(pdftex.def)             Requested size: 258.36668pt x 256.23312pt.
 
-LaTeX Warning: Reference `prior' on page 4 undefined on input line 106.
+[4 <./images/arima.png>] <images/posterior.png, id=38, 607.068pt x 608.5134pt>
+File: images/posterior.png Graphic file (type png)
 
-(./edelson_hurricane_paper.bbl [4 <./images/arima.png>]) [5]
-(./edelson_hurricane_paper.aux)
+<use images/posterior.png>
+Package pdftex.def Info: images/posterior.png used on input line 121.
+(pdftex.def)             Requested size: 234.8775pt x 235.43439pt.
+ [5 <./images/prior.png>]
+<images/cluster.png, id=43, 1091.9997pt x 1096.3359pt>
+File: images/cluster.png Graphic file (type png)
 
-LaTeX Warning: There were undefined references.
-
- ) 
+<use images/cluster.png>
+Package pdftex.def Info: images/cluster.png used on input line 134.
+(pdftex.def)             Requested size: 258.36668pt x 259.3955pt.
+ [6 <./images/posterior.png>]
+(./edelson_hurricane_paper.bbl) [7 <./images/cluster.png>]
+(./edelson_hurricane_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2667 strings out of 493089
- 36839 string characters out of 6134842
- 109750 words of memory out of 5000000
- 6118 multiletter control sequences out of 15000+600000
+ 2684 strings out of 493089
+ 37165 string characters out of 6134842
+ 109774 words of memory out of 5000000
+ 6132 multiletter control sequences out of 15000+600000
  10505 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,32p,495b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on edelson_hurricane_paper.pdf (5 pages, 272066 bytes).
+ 38i,8n,32p,725b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.p
+fb>
+Output written on edelson_hurricane_paper.pdf (7 pages, 575028 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
